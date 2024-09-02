@@ -3,7 +3,7 @@
 GRiD is a simple yet powerful version control system implemented entirely in POSIX-compatible shell scripts. It aims to replicate a subset of Git's core functionality, providing a lightweight and educational tool for understanding version control concepts.
 
 ## Overview of Engineering Requirements
-Version control systems are a cornerstone of modern software development, enabling teams to track changes, collaborate, and maintain codebases efficiently. While Git is the most widely used version control tool, building a simplified version, such as GRID, offers a deeper understanding of its core functionalities and the underlying concepts.
+Version control systems are a cornerstone of modern software development, enabling teams to track changes, collaborate, and maintain codebases efficiently. While Git is the most widely used version control tool, building a simplified version, such as GRiD, allows me and others to gain a deeper understanding of its core functionalities and the underlying concepts.
 
 **GRiD** is a simple yet powerful version control system that mimics some of the fundamental features of Git. It is implemented entirely in POSIX-compatible shell scripts and provides a practical learning experience in shell programming, version control, and system design.
 
