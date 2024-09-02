@@ -1,0 +1,21 @@
+#!/usr/bin/env dash
+
+mainDir=".grid"
+branchDir="$mainDir/branches"
+branchLogFile="$mainDir/branchLogs.txt"
+currBranch="$branchDir/master"
+. helper
+
+getCurrBranch
+
+#Whenever we call grid-branch before commit
+earlyBranchError
+
+#Empty-case see helper
+setBranchEmpty "$@"
+
+#-d case see helper
+setBranchDelete "$@"
+
+#Normal-case see helper
+setBranchNormal "$@"

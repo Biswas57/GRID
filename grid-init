@@ -1,0 +1,19 @@
+#!/usr/bin/env dash
+
+dir=".grid"
+statusDir="$dir/status"
+
+if [ -d "$dir" ]; then
+    echo "grid-init: error: $dir already exists"
+else
+    mkdir "$dir"
+    mkdir "$statusDir"
+
+    for file in *; do
+        if [ -f "$file" ]; then
+            echo "$file - untracked" > "$statusDir/$file"
+        fi
+    done
+    echo "Initialized empty grid repository in $dir"
+fi
+

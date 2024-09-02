@@ -1,0 +1,6 @@
+#!/usr/bin/env dash
+
+mainDir=".grid"
+logFile="$mainDir/logs.txt"
+
+tac "$logFile"

@@ -1,0 +1,40 @@
+#!/usr/bin/env dash
+
+if [ $# -eq 0 ]; then
+    echo "usage: grid-add <filenames>"
+    exit 1
+fi
+
+mainDir=".grid"
+indexDir="$mainDir/index"
+logFile="$mainDir/logs.txt"
+. helper
+prevCommitted=1
+
+
+
+#Latest commit folder's location
+commitDir=$(getCommitDir)
+if [ -z "$commitDir" ]; then
+    prevCommitted=0
+fi
+
+#Checks and create index if there's none
+repoExists
+createIndexDir
+
+for file in "$@"; do
+    #Edge case for checking file's presence in latest commitDir"
+    if [ "$prevCommitted" -eq 1 ] && isFileinCommit "$file" "$commitDir"; then
+        fileInLatestCommit=1
+    else
+        fileInLatestCommit=0
+    fi
+    if [ -f "$file" ]; then
+        updateIndexFile "$file"
+    elif [ "$fileInLatestCommit" -eq 1 ]; then
+        deleteIndexFile "$file"
+    else
+        checkFileExists "$file"
+    fi
+done

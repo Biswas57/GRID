@@ -1,0 +1,21 @@
+#!/usr/bin/env dash
+
+if [ $# -eq 0 ]; then
+    echo "usage: grid-rm [--force] [--cached] <filenames>"
+    exit 1
+fi
+mainDir=".grid"
+indexDir="$mainDir/index"
+statusDir="$mainDir/status"
+
+. helper
+#see helper for breakdown
+if [ "$1" = '--force' ] && [ "$2" = '--cached' ]; then
+    setForceandCached "$@"
+elif [ "$1" = '--cached' ]; then
+    setCached "$@"
+elif [ "$1" = '--force' ]; then
+    setForce "$@"
+else
+    setRemove "$@"
+fi
