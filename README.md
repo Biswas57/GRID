@@ -16,9 +16,7 @@ Some of the major accomplishments throughout this project were:
 - Implemented key commands like grid-init, grid-add, grid-commit, grid-log, grid-show, grid-rm, grid-status, grid-branch, grid-checkout, and grid-merge to provide a comprehensive set of version control tools.
 - Ensured correctness and robustness by developing an extensive suite of test scripts to validate command behaviors against expected outputs.
 - Created a dynamic branching and merging strategy to handle multiple branches efficiently while preserving data integrity.
-- Developed a detailed command-line interface (CLI) for managing and interacting with the GRID system, showcasing its functionality through clear and user-friendly commands.
-- Designed and documented the entire system structure to provide a clear understanding of GRID’s architecture, with emphasis on modular and scalable code design.
-
+  
 ## Project Overview
 **NOTE:** A complete visual overview of the entire system exists, showcasing the architecture in the final design diagram. A more extensive overview of the capabilities, constraints, and functionality of the system can be found in the Engineering Requirements.
 
